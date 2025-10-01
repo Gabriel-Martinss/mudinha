@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-add-plant',
   templateUrl: './add-plant.page.html',
   styleUrls: ['./add-plant.page.scss'],
+  standalone: false
 })
 export class AddPlantPage implements OnInit {
 

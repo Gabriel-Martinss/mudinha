@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-marketplace',
   templateUrl: './marketplace.page.html',
   styleUrls: ['./marketplace.page.scss'],
+  standalone: false
 })
 export class MarketplacePage implements OnInit {
 
