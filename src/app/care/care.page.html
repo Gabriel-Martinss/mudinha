@@ -1,13 +1,127 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>care</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudinha - Como Cuidar</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        .container {
+            background: linear-gradient(180deg, #7ed321 0%, #6bc417 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .image-carousel {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .carousel-image {
+            width: 120px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #fff;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .content-section {
+            background: rgba(139, 195, 74, 0.3);
+            border: 2px solid #2d5a0f;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        
+        .care-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .care-item {
+            font-size: 11px;
+            font-weight: 600;
+            color: #000;
+            text-transform: uppercase;
+            padding: 8px 0;
+        }
+        
+        .bottom-button {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        
+        .back-button {
+            --background: #000;
+            --color: #fff;
+            --border-radius: 20px;
+            --padding-start: 25px;
+            --padding-end: 25px;
+            height: 36px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">care</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+        .img-1 { background: radial-gradient(circle, #d2691e 0%, #8b4513 100%); }
+        .img-2 { background: radial-gradient(circle, #2f4f2f 0%, #1a2f1a 100%); }
+        .img-3 { background: radial-gradient(circle, #ffd700 0%, #daa520 100%); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-carousel">
+            <div class="carousel-image img-1"></div>
+            <div class="carousel-image img-2"></div>
+            <div class="carousel-image img-3"></div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Como cuidar das azaléas</h2>
+            
+            <div class="care-list">
+                <div class="care-item">Como cuidar das azaléas</div>
+                <div class="care-item">Como cuidar das azaléas</div>
+                <div class="care-item">Como cuidar das azaléas</div>
+                <div class="care-item">Como cuidar das azaléas</div>
+                <div class="care-item">Como cuidar das azaléas</div>
+            </div>
+        </div>
+        
+        <div class="bottom-button">
+            <ion-button class="back-button">
+                <ion-icon slot="start" name="arrow-back"></ion-icon>
+                Voltar
+            </ion-button>
+        </div>
+    </div>
+</body>
+</html>
