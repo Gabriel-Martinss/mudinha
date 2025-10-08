@@ -46,7 +46,7 @@
             font-weight: 600;
         }
         
-        /* Styling for the main content area */
+        /* Styling for the Home content area */
         .content-container {
             display: flex;
             justify-content: center;
@@ -85,6 +85,236 @@
         ion-label {
             font-weight: 500;
         }
+
+        /* Styles for "Minhas Plantas" page */
+        .gallery-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+        
+        .plant-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .plant-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .plant-button {
+            --background: transparent;
+            --background-activated: rgba(255,255,255,0.2);
+            --background-hover: rgba(255,255,255,0.1);
+            --border-color: #2d5a0f;
+            --border-width: 2px;
+            --border-style: solid;
+            --border-radius: 4px;
+            --color: #2d5a0f;
+            --padding-start: 12px;
+            --padding-end: 12px;
+            height: 28px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            width: 80%;
+        }
+        
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            padding-top: 10px;
+        }
+        
+        .add-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #000;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        
+        .add-button:hover { transform: scale(1.05); }
+        .add-button:active { transform: scale(0.95); }
+        
+        .add-button ion-icon {
+            font-size: 32px;
+            color: #7ed321;
+        }
+        
+        .back-button {
+            --background: #000;
+            --color: #fff;
+            --border-radius: 20px;
+            --padding-start: 20px;
+            --padding-end: 20px;
+            height: 32px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .back-button ion-icon { font-size: 16px; }
+
+        .plant-1 { background: radial-gradient(circle, #8b4513 0%, #654321 100%); }
+        .plant-2 { background: radial-gradient(circle, #8b008b 0%, #4b0082 100%); }
+        .plant-3 { background: radial-gradient(circle, #8b0000 0%, #4a0000 100%); }
+        .plant-4 { background: radial-gradient(circle, #cd853f 0%, #8b4513 100%); }
+        .plant-5 { background: radial-gradient(circle, #2f4f2f 0%, #1a2f1a 100%); }
+        .plant-6 { background: radial-gradient(circle, #556b2f 0%, #3a4a1f 100%); }
+        .plant-7 { background: radial-gradient(circle, #daa520 0%, #b8860b 100%); }
+        .plant-8 { background: radial-gradient(circle, #d2691e 0%, #8b4513 100%); }
+        .plant-9 { background: radial-gradient(circle, #483d8b 0%, #2f1f5f 100%); }
+
+        /* Styles for "Cuidados" page */
+        .care-page-container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .image-carousel {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+        .image-carousel::-webkit-scrollbar { display: none; }
+        
+        .carousel-image {
+            width: 120px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #fff;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #2d5a0f;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        
+        .care-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .care-item {
+            font-size: 12px;
+            font-weight: 600;
+            color: #000;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(45, 90, 15, 0.3);
+        }
+        .care-item:last-child {
+            border-bottom: none;
+        }
+        
+        .bottom-button-care {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .care-back-button {
+            --background: #000;
+            --color: #fff;
+            --border-radius: 20px;
+            --padding-start: 25px;
+            --padding-end: 25px;
+            height: 36px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .img-1 { background: radial-gradient(circle, #d2691e 0%, #8b4513 100%); }
+        .img-2 { background: radial-gradient(circle, #2f4f2f 0%, #1a2f1a 100%); }
+        .img-3 { background: radial-gradient(circle, #ffd700 0%, #daa520 100%); }
+
+        /* Styles for "Comprar" (Marketplace) page */
+        .mp-container { padding: 20px; display: flex; flex-direction: column; height: 100%; }
+        .mp-sell-section { display: flex; justify-content: space-around; padding: 10px 0 20px; }
+        .mp-sell-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .mp-sell-image { width: 70px; height: 70px; border-radius: 50%; background: #ccc; border: 3px solid #fff; }
+        .mp-sell-button {
+            --background: transparent; --border-color: #2d5a0f; --border-width: 2px; --border-style: solid;
+            --border-radius: 4px; --color: #2d5a0f; --padding-start: 10px; --padding-end: 10px;
+            height: 28px; font-size: 11px; font-weight: 600; width: 80px;
+        }
+        .mp-divider {
+            width: 100%;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 C 25 20, 25 0, 50 10 S 75 20, 100 10' stroke='%23000' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-size: 50px 10px;
+            background-repeat: repeat-x;
+            margin-bottom: 20px;
+        }
+        .mp-buy-section { flex-grow: 1; }
+        .mp-buy-title {
+            font-size: 14px; font-weight: 700; color: #000; text-transform: uppercase;
+            text-align: center; margin: 0 0 15px 0;
+        }
+        .mp-buy-list {
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .mp-buy-item {
+            background: rgba(255, 255, 255, 0.2); border: 2px solid #2d5a0f;
+            border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 15px;
+        }
+        .mp-buy-image { width: 50px; height: 50px; border-radius: 50%; background: purple; flex-shrink: 0; }
+        .mp-buy-info { flex-grow: 1; }
+        .mp-buy-name { font-size: 14px; font-weight: bold; color: #000; }
+        .mp-buy-price { font-size: 12px; font-weight: 600; color: #000; }
+        .mp-buy-seller { font-size: 11px; color: #2d5a0f; }
+        .mp-buy-contact ion-icon { font-size: 24px; color: #000; }
+        .mp-bottom-button { display: flex; justify-content: center; padding-top: 20px; }
+
     </style>
 </head>
 <body>
@@ -92,58 +322,84 @@
         <ion-tabs>
             <!-- Tab Bar Structure -->
             <ion-tab-bar slot="bottom">
-                <ion-tab-button tab="home">
-                    <ion-icon name="home-outline"></ion-icon>
-                    <ion-label>Início</ion-label>
-                </ion-tab-button>
-
-                <ion-tab-button tab="plants">
-                    <ion-icon name="leaf-outline"></ion-icon>
-                    <ion-label>Minhas Plantas</ion-label>
-                </ion-tab-button>
-
-                <ion-tab-button tab="care">
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-label>Cuidados</ion-label>
-                </ion-tab-button>
-
-                <ion-tab-button tab="marketplace">
-                    <ion-icon name="cart-outline"></ion-icon>
-                    <ion-label>Comprar</ion-label>
-                </ion-tab-button>
+                <ion-tab-button tab="home"><ion-icon name="home-outline"></ion-icon><ion-label>Início</ion-label></ion-tab-button>
+                <ion-tab-button tab="plants"><ion-icon name="leaf-outline"></ion-icon><ion-label>Minhas Plantas</ion-label></ion-tab-button>
+                <ion-tab-button tab="care"><ion-icon name="heart-outline"></ion-icon><ion-label>Cuidados</ion-label></ion-tab-button>
+                <ion-tab-button tab="marketplace"><ion-icon name="cart-outline"></ion-icon><ion-label>Comprar</ion-label></ion-tab-button>
             </ion-tab-bar>
 
             <!-- Home Tab Content -->
             <ion-tab tab="home">
-                <ion-header>
-                    <ion-toolbar>
-                        <div class="profile-container" slot="start">
-                            <ion-avatar>
-                                <!-- Using a placeholder for the user image -->
-                                <img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/>
-                            </ion-avatar>
-                            <span class="profile-name">Usuário</span>
-                        </div>
-                    </ion-toolbar>
-                </ion-header>
-                <ion-content class="ion-padding">
-                    <div class="content-container">
-                        <img src="assets/flower_login.png" alt="Logo" class="home-logo" 
-                        onerror="this.onerror=null;this.src='https://placehold.co/220x280/7ed321/000?text=Mudinha';">
-                        <h2 class="welcome-text">Bem-vindo(a) ao Mudinha!</h2>
-                    </div>
-                </ion-content>
+                <ion-header><ion-toolbar><div class="profile-container" slot="start"><ion-avatar><img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/></ion-avatar><span class="profile-name">Usuário</span></div></ion-toolbar></ion-header>
+                <ion-content class="ion-padding"><div class="content-container"><img src="assets/flower_login.png" alt="Logo" class="home-logo" onerror="this.onerror=null;this.src='https://placehold.co/220x280/7ed321/000?text=Mudinha';"><h2 class="welcome-text">Bem-vindo(a) ao Mudinha!</h2></div></ion-content>
             </ion-tab>
             
-            <!-- Placeholder content for other tabs -->
+            <!-- My Plants Tab Content -->
             <ion-tab tab="plants">
-                <!-- Content for My Plants page would go here -->
+                <ion-header><ion-toolbar><div class="profile-container" slot="start"><ion-avatar><img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/></ion-avatar><span class="profile-name">Usuário</span></div></ion-toolbar></ion-header>
+                <ion-content><div class="gallery-content"><div class="grid-container"><div class="plant-item"><div class="plant-image plant-1"></div><ion-button class="plant-button">Rosa</ion-button></div><div class="plant-item"><div class="plant-image plant-2"></div><ion-button class="plant-button">Violeta</ion-button></div><div class="plant-item"><div class="plant-image plant-3"></div><ion-button class="plant-button">Cravo</ion-button></div><div class="plant-item"><div class="plant-image plant-4"></div><ion-button class="plant-button">Girassol</ion-button></div><div class="plant-item"><div class="plant-image plant-5"></div><ion-button class="plant-button">Samambaia</ion-button></div><div class="plant-item"><div class="plant-image plant-6"></div><ion-button class="plant-button">Cacto</ion-button></div><div class="plant-item"><div class="plant-image plant-7"></div><ion-button class="plant-button">Orquídea</ion-button></div><div class="plant-item"><div class="plant-image plant-8"></div><ion-button class="plant-button">Tulipa</ion-button></div><div class="plant-item"><div class="plant-image plant-9"></div><ion-button class="plant-button">Lavanda</ion-button></div></div><div class="bottom-section"><button class="add-button"><ion-icon name="add">
+
+                </ion-icon>
+            </button>
+            
+        </div></div></ion-content>
             </ion-tab>
+            
+            <!-- Care Tab Content -->
             <ion-tab tab="care">
-                <!-- Content for Care page would go here -->
+                <ion-header><ion-toolbar><div class="profile-container" slot="start"><ion-avatar><img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/></ion-avatar><span class="profile-name">Usuário</span></div></ion-toolbar></ion-header>
+                <ion-content><div class="care-page-container"><div class="image-carousel"><div class="carousel-image img-1"></div><div class="carousel-image img-2"></div><div class="carousel-image img-3"></div><div class="carousel-image img-1"></div><div class="carousel-image img-2"></div></div><div class="content-section"><h2 class="section-title">Como cuidar das suas plantas</h2><div class="care-list"><div class="care-item">1. Iluminação: Coloque em local com luz indireta.</div><div class="care-item">2. Rega: Mantenha o solo úmido, mas não encharcado.</div><div class="care-item">3. Adubação: Fertilize a cada 2 meses na primavera.</div><div class="care-item">4. Poda: Remova folhas secas para estimular o crescimento.</div><div class="care-item">5. Umidade: Borrife água nas folhas em dias secos.</div></div></div><div class="bottom-button-care">
+                 
+                </div></div></ion-content>
             </ion-tab>
+
+            <!-- Marketplace Tab Content -->
             <ion-tab tab="marketplace">
-                <!-- Content for Marketplace page would go here -->
+                <ion-header><ion-toolbar><div class="profile-container" slot="start"><ion-avatar><img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/></ion-avatar><span class="profile-name">Usuário</span></div></ion-toolbar></ion-header>
+                <ion-content>
+                    <div class="mp-container">
+                        <div class="mp-sell-section">
+                            <div class="mp-sell-item"><div class="mp-sell-image" style="background: silver;"></div><ion-button class="mp-sell-button">R$0</ion-button><ion-button class="mp-sell-button">Vender</ion-button></div>
+                            <div class="mp-sell-item"><div class="mp-sell-image" style="background: gold;"></div><ion-button class="mp-sell-button">R$0</ion-button><ion-button class="mp-sell-button">Vender</ion-button></div>
+                            <div class="mp-sell-item"><div class="mp-sell-image" style="background: darkred;"></div><ion-button class="mp-sell-button">Cancelar</ion-button></div>
+                        </div>
+                        <div class="mp-divider"></div>
+                        <div class="mp-buy-section">
+                            <h2 class="mp-buy-title">Plantas disponíveis para compra</h2>
+                            <div class="mp-buy-list">
+                                <div class="mp-buy-item">
+                                    <div class="mp-buy-image" style="background: radial-gradient(circle, #8b008b 0%, #4b0082 100%);"></div>
+                                    <div class="mp-buy-info">
+                                        <div class="mp-buy-name">Rosa</div>
+                                        <div class="mp-buy-price">R$50</div>
+                                        <div class="mp-buy-seller">Informações do vendedor</div>
+                                    </div>
+                                    <div class="mp-buy-contact"><ion-icon name="call-outline"></ion-icon></div>
+                                </div>
+                                <div class="mp-buy-item">
+                                    <div class="mp-buy-image" style="background: radial-gradient(circle, #daa520 0%, #b8860b 100%);"></div>
+                                    <div class="mp-buy-info">
+                                        <div class="mp-buy-name">Rosa</div>
+                                        <div class="mp-buy-price">R$50</div>
+                                        <div class="mp-buy-seller">Informações do vendedor</div>
+                                    </div>
+                                    <div class="mp-buy-contact"><ion-icon name="call-outline"></ion-icon></div>
+                                </div>
+                                <div class="mp-buy-item">
+                                    <div class="mp-buy-image" style="background: radial-gradient(circle, #8b4513 0%, #654321 100%);"></div>
+                                    <div class="mp-buy-info">
+                                        <div class="mp-buy-name">Rosa</div>
+                                        <div class="mp-buy-price">R$50</div>
+                                        <div class="mp-buy-seller">Informações do vendedor</div>
+                                    </div>
+                                    <div class="mp-buy-contact"><ion-icon name="call-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mp-bottom-button">
+                        </div>
+                    </div>
+                </ion-content>
             </ion-tab>
 
         </ion-tabs>
