@@ -3,30 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudinha - Galeria de Plantas</title>
+    <title>Mudinha - Home</title>
+    <!-- Ionic Framework -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
     <style>
+        /* General body styling from login page */
         body {
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
+
+        /* Reusing the gradient background for consistency */
+        ion-content {
+            --background: linear-gradient(180deg, #7ed321 0%, #6bc417 100%);
+        }
+
+        /* Styling for the header toolbar */
+        ion-toolbar {
+            --background: #000; /* Black header like the login inputs */
+            --color: #fff; /* White title text */
+            --border-color: #000;
+            --padding-start: 10px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        ion-avatar {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #7ed321;
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
         
-        .container {
-            background: linear-gradient(180deg, #7ed321 0%, #6bc417 100%);
-            min-height: 100vh;
+        /* Styling for the Home content area */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
             padding: 20px;
+        }
+
+        .home-logo {
+            width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            letter-spacing: 1px;
+        }
+
+        /* Styling for the bottom tab bar */
+        ion-tab-bar {
+            --background: #000; /* Black tab bar to match header */
+            --border: none;
+        }
+
+        ion-tab-button {
+            --color: #7ed321; /* Inactive icon color */
+            --color-selected: #ffffff; /* Active icon color */
+        }
+
+        ion-label {
+            font-weight: 500;
+        }
+
+        /* Styles for "Minhas Plantas" page */
+        .gallery-content {
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            max-width: 600px;
+            padding: 20px;
             margin: 0 auto;
             flex-grow: 1;
         }
@@ -71,8 +142,8 @@
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            margin-top: 30px;
-            padding-bottom: 20px;
+            padding: 20px;
+            padding-top: 10px;
         }
         
         .add-button {
@@ -131,63 +202,123 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="grid-container">
-            <div class="plant-item">
-                <div class="plant-image plant-1"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
+    <ion-app>
+        <ion-tabs>
+            <!-- Tab Bar Structure -->
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="home">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <ion-label>Início</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="plants">
+                    <ion-icon name="leaf-outline"></ion-icon>
+                    <ion-label>Minhas Plantas</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="care">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-label>Cuidados</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="marketplace">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <ion-label>Comprar</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+
+            <!-- Home Tab Content -->
+            <ion-tab tab="home">
+                <ion-header>
+                    <ion-toolbar>
+                        <div class="profile-container" slot="start">
+                            <ion-avatar>
+                                <img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/>
+                            </ion-avatar>
+                            <span class="profile-name">Usuário</span>
+                        </div>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content class="ion-padding">
+                    <div class="content-container">
+                        <img src="assets/flower_login.png" alt="Logo" class="home-logo" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/220x280/7ed321/000?text=Mudinha';">
+                        <h2 class="welcome-text">Bem-vindo(a) ao Mudinha!</h2>
+                    </div>
+                </ion-content>
+            </ion-tab>
             
-            <div class="plant-item">
-                <div class="plant-image plant-2"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
+            <!-- My Plants Tab Content -->
+            <ion-tab tab="plants">
+                <ion-header>
+                    <ion-toolbar>
+                        <div class="profile-container" slot="start">
+                            <ion-avatar>
+                                <img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/>
+                            </ion-avatar>
+                            <span class="profile-name">Usuário</span>
+                        </div>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content>
+                    <div class="gallery-content">
+                        <div class="grid-container">
+                            <div class="plant-item">
+                                <div class="plant-image plant-1"></div>
+                                <ion-button class="plant-button">Rosa</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-2"></div>
+                                <ion-button class="plant-button">Violeta</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-3"></div>
+                                <ion-button class="plant-button">Cravo</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-4"></div>
+                                <ion-button class="plant-button">Girassol</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-5"></div>
+                                <ion-button class="plant-button">Samambaia</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-6"></div>
+                                <ion-button class="plant-button">Cacto</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-7"></div>
+                                <ion-button class="plant-button">Orquídea</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-8"></div>
+                                <ion-button class="plant-button">Tulipa</ion-button>
+                            </div>
+                            <div class="plant-item">
+                                <div class="plant-image plant-9"></div>
+                                <ion-button class="plant-button">Lavanda</ion-button>
+                            </div>
+                        </div>
+                        <div class="bottom-section">
+                            <button class="add-button">
+                                <ion-icon name="add"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-tab>
             
-            <div class="plant-item">
-                <div class="plant-image plant-3"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-            
-            <div class="plant-item">
-                <div class="plant-image plant-4"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-            
-            <div class="plant-item">
-                <div class="plant-image plant-5"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-            
-            <div class="plant-item">
-                <div class="plant-image plant-6"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-            
-            <div class="plant-item">
-                <div class="plant-image plant-7"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-            
-            <div class="plant-item">
-                <div class="plant-image plant-8"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-            
-            <div class="plant-item">
-                <div class="plant-image plant-9"></div>
-                <ion-button class="plant-button">Rosa</ion-button>
-            </div>
-        </div>
-        
-        <div class="bottom-section">
-            <button class="add-button">
-                <ion-icon name="add"></ion-icon>
-            </button>
-            <ion-button class="back-button">
-                <ion-icon slot="start" name="arrow-back"></ion-icon>
-                Voltar
-            </ion-button>
-        </div>
-    </div>
+            <!-- Placeholder content for other tabs -->
+            <ion-tab tab="care">
+            <!-- Content for Care page would go here -->
+            </ion-tab>
+            <ion-tab tab="marketplace">
+            <!-- Content for Marketplace page would go here -->
+            </ion-tab>
+
+        </ion-tabs>
+    </ion-app>
 </body>
 </html>
+
