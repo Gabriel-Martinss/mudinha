@@ -1,13 +1,77 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>add-plant</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">add-plant</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudinha - Adicionar Planta</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(180deg, #7ed321 0%, #6bc417 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 320px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .upload-area {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            border: 3px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .upload-area ion-icon {
+            font-size: 50px;
+            color: #000;
+        }
+        .name-input {
+            --background: transparent;
+            --color: #000;
+            --placeholder-color: #2d5a0f;
+            --border-color: #2d5a0f;
+            --border-width: 2px;
+            --border-style: solid;
+            --border-radius: 4px;
+            --padding-start: 15px;
+            --padding-end: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .submit-button {
+            --background: #000;
+            --color: #fff;
+            --border-radius: 20px;
+            text-transform: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="upload-area">
+            <ion-icon name="add"></ion-icon>
+        </div>
+        <ion-input class="name-input" placeholder="NOME"></ion-input>
+        <ion-button class="submit-button">Enviar<ion-icon slot="end" name="send"></ion-icon></ion-button>
+    </div>
+</body>
+</html>
+  
