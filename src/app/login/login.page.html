@@ -1,50 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudinha - Login</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
-</head>
-<body>
-    <div class="container">
-        <div class="logo-container">
-            <img src="assets/flower_login.png" alt="Logo">
-            <h1 class="brand-name">Mudinha</h1>
-        </div>
-        
-        <div class="form-container">
-            <div class="input-wrapper">
-                <div class="input-icon">
-                    <ion-icon name="mail-outline"></ion-icon>
-                </div>
-                <ion-input placeholder="Email" type="email"></ion-input>
-            </div>
-            
-            <div class="input-wrapper">
-                <div class="input-icon">
-                    <ion-icon name="key-outline"></ion-icon>
-                </div>
-                <ion-input placeholder="Senha" type="password"></ion-input>
-            </div>
-            
-            <div class="forgot-password">
-                <a href="#">Esqueceu sua senha?</a>
-            </div>
-            
-            <div class="button-group">
-                <ion-button>
-                    <ion-icon slot="start" name="person-add-outline"></ion-icon>
-                    Cadastrar
-                </ion-button>
-                <ion-button>
-                    <ion-icon slot="start" name="log-in-outline"></ion-icon>
-                    Acessar
-                </ion-button>
-            </div>
-        </div>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mudinha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="logo-container">
+      <img src="assets/flower_login.png" alt="Logo">
+      <h1 class="brand-name">Mudinha</h1>
     </div>
-</body>
-</html>
+    
+    <form (ngSubmit)="login()" [formGroup]="credentials">
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        <ion-note slot="error" *ngIf="email?.dirty && email?.touched && email?.errors">
+          Email inválido
+        </ion-note>
+      </ion-item>
+      
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+        <ion-note slot="error" *ngIf="password?.dirty && password?.touched && password?.errors">
+          Senhas de seis caracteres
+        </ion-note>
+      </ion-item>
+      
+      <div class="forgot-password">
+        <a href="#">Esqueceu sua senha?</a>
+      </div>
+      
+      <div class="button-group">
+        <ion-button type="submit" expand="block" [disabled]="!credentials.valid">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Acessar
+        </ion-button>
+        <ion-button type="button" expand="block" color="secondary" (click)="register()">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+          Cadastrar
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

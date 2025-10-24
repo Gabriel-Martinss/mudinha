@@ -1,89 +1,69 @@
-Mudinha - Plant Care & Marketplace App
-Welcome to the Mudinha project! This is an Ionic/Angular application designed to help users care for their plants and participate in a community marketplace to buy and sell plants.
+# Mudinha (Ionic/Angular)
 
-This project is being developed as a practical exercise for a mobile development course.
+Mudinha is a plant care and marketplace app built with Ionic + Angular. It provides separate pages for Home, My Plants, Marketplace, Care, Add Plant, Personal Info, and Auth screens, with a global navigation menu.
 
-Prerequisites
-Before you begin, ensure you have the following tools installed on your system. These instructions are based on the course materials provided.
+## Prerequisites
+- Node.js and npm
+- Ionic CLI: `npm i -g @ionic/cli`
+- Angular CLI: `npm i -g @angular/cli`
 
-Node.js: A JavaScript runtime environment.
+## Getting Started
+- Install deps: `npm install`
+- Run dev server: `ionic serve`
+- Open: `http://localhost:8100`
 
-NPM: Node Package Manager, which comes with Node.js.
+## Project Structure
+Key paths under `src/app/`:
+- `home/` – Home page
+- `plants/` – My Plants
+- `marketplace/` – Marketplace
+- `care/` – Care & Tips
+- `add-plant/` – Add Plant form
+- `personal-info/` – Personal info form
+- `login/`, `sign-up/`, `recover/` – Auth screens
+- `app-routing.module.ts` – Global routes
+- `app.component.html` – Global layout and menu
 
-Ionic CLI: The command-line interface for Ionic.
+## Routing
+Routes are defined per-page using Angular routing modules and aggregated in `src/app/app-routing.module.ts`. Common paths:
+- `/home` – Home
+- `/plants` – My Plants
+- `/marketplace` – Marketplace
+- `/care` – Care
+- `/add-plant` – Add Plant
+- `/personal-info` – Personal Info
+- `/login`, `/sign-up`, `/recover` – Auth flows
 
-Angular CLI: The command-line interface for Angular.
+## Navigation (Navbar/Menu)
+Mudinha uses Ionic’s side menu for global navigation:
+- Global menu: `src/app/app.component.html` contains `<ion-menu>` with `routerLink` items to the main pages.
+- Page headers: Each page should include `<ion-header>` with an `<ion-menu-button>` inside `<ion-toolbar>` to open the side menu.
 
-Visual Studio Code: The recommended code editor.
+Example header snippet to add on pages:
+```html
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Page Title</ion-title>
+  </ion-toolbar>
+</ion-header>
+```
 
-1. Environment Setup
-Follow these steps to configure your development environment.
+## Page Templates (Best Practice)
+Each page HTML should be an Ionic component template, not a full document. Use:
+- `<ion-header>` for the toolbar and title
+- `<ion-content>` for page body
 
-1.1. Install Node.js
-Node.js is essential for running the Ionic and Angular frameworks.
+Avoid including `<!DOCTYPE html>`, `<html>`, `<head>`, or `<body>` in page templates. Those belong to `src/index.html`.
 
-Download: Go to the official Node.js website and download the LTS (Long-Term Support) version for your operating system.
-https://nodejs.org/en/download/
+## Scripts
+- Start: `npm start` or `ionic serve`
+- Build: `ionic build` (outputs to `www/`)
+- Test: `npm test`
+- Lint: `npm run lint`
 
-Install: Run the installer and follow the on-screen instructions.
-
-Verify Installation: Open your terminal (or the "Node.js command prompt" on Windows) and run the following command to check if it was installed correctly:
-
-node -v
-
-This command should display the installed Node.js version. NPM is installed automatically with Node.js. To verify its version, run:
-
-npm -v
-
-1.2. Install Ionic & Angular CLI
-The Ionic and Angular command-line tools are required to create, build, and run the project. Install them globally using npm.
-
-Installation Command: Open your terminal and run the following command:
-
-npm install -g @ionic/cli @angular/cli
-
-Verify Installation: Check that the CLIs were installed correctly by running:
-
-ionic -v
-ng version
-
-2. Getting Started with the Project
-Once your environment is set up, you can run the project.
-
-2.1. Clone the Repository (If Applicable)
-If the project is on a Git repository, clone it to your local machine:
-
-git clone <repository-url>
-cd mudinha
-
-2.2. Install Project Dependencies
-Navigate to the project's root directory and install the required packages listed in package.json.
-
-npm install
-
-2.3. Run the Application
-To start the local development server and view the application in your browser, run the following command. The app will automatically reload if you change any of the source files.
-
-ionic serve
-
-The application will be accessible at http://localhost:8100.
-
-3. Creating a New Project from Scratch
-If you need to create a new Ionic project based on the course guidelines, you can use the following command:
-
-# General command structure
-ionic start <project-name> <template> --type=angular
-
-# Example for this project
-ionic start mudinha tabs --type=angular
-
-Available Scripts
-In the project directory, you can run the following scripts from package.json:
-
-npm start: Runs the app in development mode.
-
-npm run build: Builds the app for production to the www folder.
-
-npm run test: Runs the unit tests via Karma.
-
-npm run lint: Lints the project's TypeScript and HTML files.
+## Notes
+- If you see pages with full HTML documents, refactor them to the Ionic component pattern shown above.
+- Tabs (`tabs/`, `tab1/`, `tab2/`, `tab3/`) are available but the side menu is the primary navigation in this app.
