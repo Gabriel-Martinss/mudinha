@@ -1,0 +1,124 @@
+ion-content {
+  --background: linear-gradient(180deg, #7ed321 0%, #6bc417 100%);
+}
+
+ion-toolbar {
+  --background: #000;
+  --color: #fff;
+  --border-color: #000;
+  --padding-start: 10px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+ion-avatar {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #7ed321;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.gallery-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.plant-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.plant-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.plant-button {
+  --background: transparent;
+  --background-activated: rgba(255,255,255,0.2);
+  --background-hover: rgba(255,255,255,0.1);
+  --border-color: #2d5a0f;
+  --border-width: 2px;
+  --border-style: solid;
+  --border-radius: 4px;
+  --color: #2d5a0f;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  height: 28px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.add-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.add-button:hover {
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(0.95);
+}
+
+.add-button ion-icon {
+  font-size: 32px;
+  color: #7ed321;
+}
+
+/* Sample plant images using gradients */
+.plant-1 { background: radial-gradient(circle, #8b4513 0%, #654321 100%); }
+.plant-2 { background: radial-gradient(circle, #8b008b 0%, #4b0082 100%); }
+.plant-3 { background: radial-gradient(circle, #8b0000 0%, #4a0000 100%); }
+.plant-4 { background: radial-gradient(circle, #cd853f 0%, #8b4513 100%); }
+.plant-5 { background: radial-gradient(circle, #2f4f2f 0%, #1a2f1a 100%); }
+.plant-6 { background: radial-gradient(circle, #556b2f 0%, #3a4a1f 100%); }
+.plant-7 { background: radial-gradient(circle, #daa520 0%, #b8860b 100%); }
+.plant-8 { background: radial-gradient(circle, #d2691e 0%, #8b4513 100%); }
+.plant-9 { background: radial-gradient(circle, #483d8b 0%, #2f1f5f 100%); }

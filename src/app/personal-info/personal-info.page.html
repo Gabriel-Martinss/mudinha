@@ -1,57 +1,52 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudinha - Login</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
-</head>
-<body>
-    <div class="container">
-        
-        
-        <div class="form-container">
-            <div class="input-wrapper">
-                <div class="input-icon">
-                    <ion-icon name="mail-outline"></ion-icon>
-                </div>
-                <ion-input placeholder="Nome"></ion-input>
-            </div>
-            
-            <div class="input-wrapper">
-                <div class="input-icon">
-                    <ion-icon name="key-outline"></ion-icon>
-                </div>
-                <ion-input placeholder="Telefone"></ion-input>
-            </div>
-            
-            <div class="input-wrapper">
-              <div class="input-icon">
-                  <ion-icon name="mail-outline"></ion-icon>
-              </div>
-              <ion-input placeholder="Email" type="email"></ion-input>
-          </div>
-          
-          <div class="input-wrapper">
-              <div class="input-icon">
-                  <ion-icon name="key-outline"></ion-icon>
-              </div>
-              <ion-input placeholder="Senha" type="password"></ion-input>
-          </div>
-            
-            <div class="button-group">
-                <ion-button>
-                    <ion-icon slot="start" name="person-add-outline"></ion-icon>
-                    Salvar
-                </ion-button>
-                <ion-button>
-                    <ion-icon slot="start" name="log-in-outline"></ion-icon>
-                    Cancelar
-                </ion-button>
-            </div>
-        </div>
+<ion-header>
+  <ion-toolbar>
+    <div class="profile-container" slot="start">
+      <ion-avatar>
+        <img src="https://placehold.co/80x80/7ed321/000?text=U" alt="User Avatar"/>
+      </ion-avatar>
+      <span class="profile-name">Usuário</span>
     </div>
-</body>
-</html>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="personal-info-container">
+    <div class="info-section">
+      <h2 class="section-title">Informações Pessoais</h2>
+      <div class="info-list">
+        <div class="info-item">
+          <ion-icon name="person-outline" class="info-icon"></ion-icon>
+          <div class="info-content">
+            <div class="info-label">Nome</div>
+            <div class="info-value">Usuário</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <ion-icon name="mail-outline" class="info-icon"></ion-icon>
+          <div class="info-content">
+            <div class="info-label">Email</div>
+            <div class="info-value">usuario&#64;exemplo.com</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <ion-icon name="call-outline" class="info-icon"></ion-icon>
+          <div class="info-content">
+            <div class="info-label">Telefone</div>
+            <div class="info-value">(00) 00000-0000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="button-section">
+      <ion-button class="edit-button">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Editar Perfil
+      </ion-button>
+      <ion-button class="logout-button">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Sair
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
